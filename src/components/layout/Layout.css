@@ -1,0 +1,6 @@
+/* Layout */
+.layout {
+  padding-top: var(--navbar-height);
+}
+
+main { min-height: 100vh; }

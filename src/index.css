@@ -1,0 +1,245 @@
+/* ============================================================
+   PORTFOLIO — MINIMALIST DESIGN SYSTEM
+   Clean, recruiter-friendly, white theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  /* Backgrounds */
+  --bg:          #FFFFFF;
+  --bg-surface:  #F8FAFC;
+  --bg-hover:    #F1F5F9;
+  --bg-code:     #F1F5F9;
+
+  /* Borders */
+  --border:      #E2E8F0;
+  --border-strong: #CBD5E1;
+
+  /* Text */
+  --text:        #0F172A;
+  --text-muted:  #64748B;
+  --text-light:  #94A3B8;
+
+  /* Accent — single blue */
+  --accent:       #2563EB;
+  --accent-hover: #1D4ED8;
+  --accent-light: #EFF6FF;
+  --accent-border: #BFDBFE;
+
+  /* Status colors */
+  --green:       #16A34A;
+  --green-light: #F0FDF4;
+  --green-border:#BBF7D0;
+  --amber:       #D97706;
+  --amber-light: #FFFBEB;
+  --amber-border:#FDE68A;
+  --blue:        #2563EB;
+  --blue-light:  #EFF6FF;
+  --blue-border: #BFDBFE;
+
+  /* Spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Typography */
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+  --text-6xl:  3.75rem;
+
+  /* Line heights */
+  --leading-tight:  1.25;
+  --leading-snug:   1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.625;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius:    8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow:    0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+
+  /* Transitions */
+  --transition: 0.15s ease;
+  --transition-md: 0.2s ease;
+
+  /* Layout */
+  --max-width: 900px;
+  --navbar-height: 64px;
+
+  /* Z-index */
+  --z-navbar: 100;
+}
+
+/* ---------- Dark Mode ---------- */
+[data-theme="dark"] {
+  --bg:          #0F172A;
+  --bg-surface:  #1E293B;
+  --bg-hover:    #334155;
+  --bg-code:     #1E293B;
+
+  --border:      #334155;
+  --border-strong: #475569;
+
+  --text:        #F8FAFC;
+  --text-muted:  #94A3B8;
+  --text-light:  #64748B;
+
+  --accent:       #60A5FA;
+  --accent-hover: #93C5FD;
+  --accent-light: #172554;
+  --accent-border: #1E40AF;
+
+  --green:       #4ADE80;
+  --green-light: #052E16;
+  --green-border:#14532D;
+  --amber:       #FCD34D;
+  --amber-light: #1C1007;
+  --amber-border:#78350F;
+  --blue:        #60A5FA;
+  --blue-light:  #172554;
+  --blue-border: #1E40AF;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow:    0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.5), 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+img, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul, ol { list-style: none; }
+
+/* ---------- Typography Utilities ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  color: var(--text);
+}
+
+/* ---------- Layout Utilities ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* ---------- Section Base ---------- */
+.section {
+  padding: var(--space-20) 0;
+  border-top: 1px solid var(--border);
+}
+
+.section:first-of-type { border-top: none; }
+
+.section-label {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+
+.section-title {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: var(--space-3);
+}
+
+.section-subtitle {
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: var(--leading-relaxed);
+}
+
+/* ---------- Tag Utility ---------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.tag--accent {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: var(--accent-border);
+}
+
+/* ---------- Divider ---------- */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--space-8) 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  :root { --max-width: 100%; }
+  .section { padding: var(--space-16) 0; }
+  .section-title { font-size: var(--text-2xl); }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 var(--space-4); }
+}
