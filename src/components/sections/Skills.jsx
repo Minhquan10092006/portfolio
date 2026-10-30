@@ -1,3 +1,4 @@
+import { BadgeCheck } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import skillsData from '../../data/skills';
 import './Skills.css';
@@ -8,26 +9,44 @@ export default function Skills() {
   return (
     <section className="section skills" id="skills">
       <div className="container">
-        <span className="section-label">{t('skills.label')}</span>
-        <h2 className="section-title">{t('skills.title')}</h2>
+        <div className="skills__head">
+          <div>
+            <span className="section-label">{t('skills.label')}</span>
+            <h2 className="section-title">{t('skills.title')}</h2>
+          </div>
+          <p className="section-subtitle">{t('skills.subtitle')}</p>
+        </div>
 
-        <div className="skills__groups">
-          {skillsData.map((group) => {
+        <div className="skills__grid">
+          {skillsData.map((group, gi) => {
             const Icon = group.icon;
             return (
-              <div key={group.category.en} className="skills__group">
-                <div className="skills__group-header">
-                  <Icon size={16} />
-                  <h3 className="skills__group-name">{group.category[lang]}</h3>
+              <article key={group.category.en} className="skill-card" data-reveal>
+                <div className="skill-card__head">
+                  <span className="skill-card__icon">
+                    <Icon size={18} />
+                  </span>
+                  <span className="skill-card__num">/{String(gi + 1).padStart(2, '0')}</span>
                 </div>
-                <div className="skills__tags">
+
+                <div className="skill-card__title-row">
+                  <h3 className="skill-card__title">{group.category[lang]}</h3>
+                  {group.badge && (
+                    <span className="skill-card__badge">
+                      <BadgeCheck size={12} />
+                      {group.badge}
+                    </span>
+                  )}
+                </div>
+
+                <div className="skill-card__tags">
                   {group.items.map((skill) => (
-                    <span key={skill.name} className="skills__tag">
+                    <span key={skill.name} className="skill-card__tag">
                       {skill.name}
                     </span>
                   ))}
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>

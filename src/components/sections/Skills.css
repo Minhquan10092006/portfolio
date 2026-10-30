@@ -1,52 +1,157 @@
-/* Skills */
-.skills__groups {
-  margin-top: var(--space-8);
+/* ============================================================
+   SKILLS — bento cards
+   ============================================================ */
+
+.skills__head {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-10);
+  margin-bottom: var(--space-10);
 }
 
-.skills__group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
+.skills__head .section-subtitle {
+  max-width: 40ch;
+  padding-bottom: 4px;
 }
 
-.skills__group-header {
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.skill-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: border-color var(--transition-md), transform var(--transition-md), background var(--transition-md);
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: -40% 30% auto -30%;
+  height: 70%;
+  background: var(--gradient-main);
+  filter: blur(70px);
+  opacity: 0;
+  transition: opacity var(--transition-md);
+  pointer-events: none;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--card-border-hover);
+  background: var(--card-bg-hover);
+}
+
+.skill-card:hover::before {
+  opacity: 0.16;
+}
+
+.skill-card__head {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  color: var(--text-muted);
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
 }
 
-.skills__group-name {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--text);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+.skill-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid var(--accent-border);
+  box-shadow: 0 0 26px rgba(138, 164, 255, 0.14);
 }
 
-.skills__tags {
+.skill-card__num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+}
+
+.skill-card__title-row {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--space-2);
+  margin-bottom: var(--space-4);
 }
 
-.skills__tag {
+.skill-card__title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.skill-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.skill-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.skill-card__tag {
   display: inline-block;
-  padding: 4px 12px;
-  font-size: var(--text-sm);
+  padding: 6px 11px;
+  font-size: 12px;
   font-weight: 400;
-  color: var(--text);
-  background: var(--bg-surface);
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--bg-surface) 55%, transparent);
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
   transition: all var(--transition);
+  cursor: default;
 }
 
-.skills__tag:hover {
+.skill-card__tag:hover {
+  color: var(--text);
   border-color: var(--accent-border);
-  color: var(--accent);
   background: var(--accent-light);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .skills__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .skills__head .section-subtitle {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
 }

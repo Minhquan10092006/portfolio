@@ -1,6 +1,12 @@
 /* Layout */
 .layout {
-  padding-top: var(--navbar-height);
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-main { min-height: 100vh; }
+main {
+  flex: 1;
+  min-height: 100vh;
+}
