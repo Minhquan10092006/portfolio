@@ -33,12 +33,12 @@ const translations = {
     about: {
       label: 'About Me',
       title: 'Who I Am',
-      description: `3rd-year Computer Networks & Data Communications student at VNU-UET, currently working as a Machine Learning Intern at FlyRank AI (Chicago, US — remote). AWS Certified in both AI Practitioner and Cloud Practitioner, currently preparing for Solutions Architect – Associate (SAA-C03). I specialize in Cloud Security and Application Security, approaching security as a core design principle: resilient, least-privilege systems built from the architecture up. Skilled in socket programming (TCP/UDP in Java), full-stack web development with AI integration (Claude API), SQL databases, and cloud security fundamentals.`,
+      description: `3rd-year Computer Networks & Data Communications student at VNU-UET, former Machine Learning Intern at FlyRank AI (Chicago, US — remote). AWS Certified in both AI Practitioner and Cloud Practitioner, currently preparing for Solutions Architect – Associate (SAA-C03). I specialize in Cloud Security and Application Security, approaching security as a core design principle: resilient, least-privilege systems built from the architecture up. Skilled in socket programming (TCP/UDP in Java), full-stack web development with AI integration (Claude API), SQL databases, and cloud security fundamentals.`,
       focus: ['Cloud Security', 'Application Security', 'Networking', 'AI on AWS'],
       stats: [
         { value: 'AWS ×2', label: 'AI & Cloud Certified' },
         { value: '5', label: 'Total Certifications' },
-        { value: 'ML Intern', label: 'FlyRank AI — Remote' },
+        { value: 'ML Intern', label: 'FlyRank AI — Completed' },
         { value: '3rd Year', label: 'VNU-UET Student' },
       ],
     },
@@ -133,12 +133,12 @@ const translations = {
     about: {
       label: 'Giới thiệu',
       title: 'Về tôi',
-      description: `Sinh viên năm 3 ngành Mạng máy tính và Truyền thông dữ liệu tại Trường Đại học Công nghệ (VNU-UET), hiện đang thực tập vị trí Machine Learning Intern tại FlyRank AI (Chicago, Mỹ — từ xa). Đã đạt chứng chỉ AWS Certified AI Practitioner và AWS Certified Cloud Practitioner, hiện đang ôn thi Solutions Architect – Associate (SAA-C03). Tôi chuyên sâu về Cloud Security và Application Security, xây dựng hệ thống bảo mật từ cấp kiến trúc theo nguyên tắc least-privilege. Có kinh nghiệm lập trình socket TCP/UDP (Java), phát triển web full-stack tích hợp AI (Claude API), cơ sở dữ liệu SQL và bảo mật cloud.`,
+      description: `Sinh viên năm 3 ngành Mạng máy tính và Truyền thông dữ liệu tại Trường Đại học Công nghệ (VNU-UET), từng thực tập vị trí Machine Learning Intern tại FlyRank AI (Chicago, Mỹ — từ xa). Đã đạt chứng chỉ AWS Certified AI Practitioner và AWS Certified Cloud Practitioner, hiện đang ôn thi Solutions Architect – Associate (SAA-C03). Tôi chuyên sâu về Cloud Security và Application Security, xây dựng hệ thống bảo mật từ cấp kiến trúc theo nguyên tắc least-privilege. Có kinh nghiệm lập trình socket TCP/UDP (Java), phát triển web full-stack tích hợp AI (Claude API), cơ sở dữ liệu SQL và bảo mật cloud.`,
       focus: ['Cloud Security', 'Application Security', 'Mạng máy tính', 'AI trên AWS'],
       stats: [
         { value: 'AWS ×2', label: 'Chứng chỉ AI & Cloud' },
         { value: '5', label: 'Tổng chứng chỉ' },
-        { value: 'ML Intern', label: 'FlyRank AI — Remote' },
+        { value: 'ML Intern', label: 'FlyRank AI — Đã kết thúc' },
         { value: 'Năm 3', label: 'Sinh viên VNU-UET' },
       ],
     },

@@ -30,7 +30,7 @@ export default function About() {
 
             <div className="about__portrait-meta">
               <span className="about__portrait-name">{t('hero.name')}</span>
-              <span className="about__portrait-role">ML Intern @ FlyRank AI</span>
+              <span className="about__portrait-role">Former ML Intern @ FlyRank AI</span>
             </div>
 
             <div className="about__portrait-tags">
